@@ -97,7 +97,7 @@
 		83F4B52915E843B100E0926F /* NSObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 83F4B52715E843B100E0926F /* NSObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83F550E0155E030800E95D3B /* objc-cache-old.mm in Sources */ = {isa = PBXBuildFile; fileRef = 83F550DF155E030800E95D3B /* objc-cache-old.mm */; };
 		87BB4EA70EC39854005D08E1 /* objc-probes.d in Sources */ = {isa = PBXBuildFile; fileRef = 87BB4E900EC39633005D08E1 /* objc-probes.d */; };
-		965ECFA01E005031004F5B69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 965ECF9F1E005031004F5B69 /* main.m */; };
+		965ECFA01E005031004F5B69 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 965ECF9F1E005031004F5B69 /* main.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		965ECFA41E00503A004F5B69 /* libobjc.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC0630554660B00DB518D /* libobjc.A.dylib */; };
 		9672F7EE14D5F488007CEC96 /* NSObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9672F7ED14D5F488007CEC96 /* NSObject.mm */; };
 		96A603B31E00F5E70050F65B /* _simple.h in Headers */ = {isa = PBXBuildFile; fileRef = 96A6039E1E00F5E70050F65B /* _simple.h */; };
@@ -226,7 +226,7 @@
 		83F550DF155E030800E95D3B /* objc-cache-old.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "objc-cache-old.mm"; path = "runtime/objc-cache-old.mm"; sourceTree = "<group>"; };
 		87BB4E900EC39633005D08E1 /* objc-probes.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; name = "objc-probes.d"; path = "runtime/objc-probes.d"; sourceTree = "<group>"; };
 		965ECF9D1E005030004F5B69 /* debug-objc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "debug-objc"; sourceTree = BUILT_PRODUCTS_DIR; };
-		965ECF9F1E005031004F5B69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		965ECF9F1E005031004F5B69 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		9672F7ED14D5F488007CEC96 /* NSObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSObject.mm; path = runtime/NSObject.mm; sourceTree = "<group>"; };
 		96A6039E1E00F5E70050F65B /* _simple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _simple.h; sourceTree = "<group>"; };
 		96A6039F1E00F5E70050F65B /* Block_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block_private.h; sourceTree = "<group>"; };
@@ -436,7 +436,7 @@
 		965ECF9E1E005031004F5B69 /* debug-objc */ = {
 			isa = PBXGroup;
 			children = (
-				965ECF9F1E005031004F5B69 /* main.m */,
+				965ECF9F1E005031004F5B69 /* main.mm */,
 			);
 			path = "debug-objc";
 			sourceTree = "<group>";
@@ -685,7 +685,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				965ECFA01E005031004F5B69 /* main.m in Sources */,
+				965ECFA01E005031004F5B69 /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1007,11 +1007,13 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					LIBC_NO_LIBCRASHREPORTERCLIENT,
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/include";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1050,6 +1052,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/include";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -6,13 +6,14 @@
 //
 //
 
+#import "objc-private.h"
 #import <Foundation/Foundation.h>
-#import "objc.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");        
+        objc_class *obj_1 = (objc_class *)[NSObject class];
+        objc_class *obj_2 = (objc_class *)[NSString class];
+        NSLog(@"%p,%p",obj_1,obj_2);
     }
     return 0;
 }
