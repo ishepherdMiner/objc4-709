@@ -3934,7 +3934,7 @@ class_copyMethodList(Class cls, unsigned int *outCount)
     assert(cls->isRealized());
 
     count = cls->data()->methods.count();
-
+    
     if (count > 0) {
         result = (Method *)malloc((count + 1) * sizeof(Method));
         
@@ -3944,7 +3944,7 @@ class_copyMethodList(Class cls, unsigned int *outCount)
         }
         result[count] = nil;
     }
-
+    
     if (outCount) *outCount = count;
     return result;
 }

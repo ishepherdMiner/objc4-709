@@ -115,6 +115,8 @@
 		96A603BF1E00F5E70050F65B /* reason.h in Headers */ = {isa = PBXBuildFile; fileRef = 96A603AE1E00F5E70050F65B /* reason.h */; };
 		96A603C01E00F5E70050F65B /* cpu_capabilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 96A603B11E00F5E70050F65B /* cpu_capabilities.h */; };
 		96A603C11E00F5E70050F65B /* pthread_machdep.h in Headers */ = {isa = PBXBuildFile; fileRef = 96A603B21E00F5E70050F65B /* pthread_machdep.h */; };
+		96AE460D1E0FBCA8004F1C45 /* DataStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE460C1E0FBCA8004F1C45 /* DataStructure.m */; };
+		96AE46101E10082A004F1C45 /* NewTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE460F1E10082A004F1C45 /* NewTarget.m */; };
 		E8923DA1116AB2820071B552 /* a1a2-blocktramps-i386.s in Sources */ = {isa = PBXBuildFile; fileRef = E8923D9C116AB2820071B552 /* a1a2-blocktramps-i386.s */; };
 		E8923DA2116AB2820071B552 /* a1a2-blocktramps-x86_64.s in Sources */ = {isa = PBXBuildFile; fileRef = E8923D9D116AB2820071B552 /* a1a2-blocktramps-x86_64.s */; };
 		E8923DA3116AB2820071B552 /* a2a3-blocktramps-i386.s in Sources */ = {isa = PBXBuildFile; fileRef = E8923D9E116AB2820071B552 /* a2a3-blocktramps-i386.s */; };
@@ -243,6 +245,10 @@
 		96A603AE1E00F5E70050F65B /* reason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reason.h; sourceTree = "<group>"; };
 		96A603B11E00F5E70050F65B /* cpu_capabilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpu_capabilities.h; sourceTree = "<group>"; };
 		96A603B21E00F5E70050F65B /* pthread_machdep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pthread_machdep.h; sourceTree = "<group>"; };
+		96AE460B1E0FBCA8004F1C45 /* DataStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStructure.h; sourceTree = "<group>"; };
+		96AE460C1E0FBCA8004F1C45 /* DataStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStructure.m; sourceTree = "<group>"; };
+		96AE460E1E10082A004F1C45 /* NewTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewTarget.h; path = ../NewTarget.h; sourceTree = "<group>"; };
+		96AE460F1E10082A004F1C45 /* NewTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewTarget.m; path = ../NewTarget.m; sourceTree = "<group>"; };
 		BC8B5D1212D3D48100C78A5B /* libauto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libauto.dylib; path = /usr/lib/libauto.dylib; sourceTree = "<absolute>"; };
 		D2AAC0630554660B00DB518D /* libobjc.A.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libobjc.A.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8923D9C116AB2820071B552 /* a1a2-blocktramps-i386.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "a1a2-blocktramps-i386.s"; path = "runtime/a1a2-blocktramps-i386.s"; sourceTree = "<group>"; };
@@ -437,6 +443,10 @@
 			isa = PBXGroup;
 			children = (
 				965ECF9F1E005031004F5B69 /* main.mm */,
+				96AE460E1E10082A004F1C45 /* NewTarget.h */,
+				96AE460F1E10082A004F1C45 /* NewTarget.m */,
+				96AE460B1E0FBCA8004F1C45 /* DataStructure.h */,
+				96AE460C1E0FBCA8004F1C45 /* DataStructure.m */,
 			);
 			path = "debug-objc";
 			sourceTree = "<group>";
@@ -686,6 +696,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				965ECFA01E005031004F5B69 /* main.mm in Sources */,
+				96AE46101E10082A004F1C45 /* NewTarget.m in Sources */,
+				96AE460D1E0FBCA8004F1C45 /* DataStructure.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
