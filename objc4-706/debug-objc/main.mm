@@ -17,8 +17,10 @@ void demo4();
 static const void *assockey = "";
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        DataStructure *d = [[DataStructure alloc] init];
-        [d performSelector:@selector(haha)];
+        while (true) {
+            demo2();
+            sleep(1);
+        }
     }
     return 0;
 }
@@ -102,7 +104,7 @@ void demo1() {
 }
 
 void demo2() {
-    NSLog(@"NSString类的super_class是%@",class_getSuperclass([NSObject class]));
+    NSLog(@"NSString类的super_class是%@",class_getSuperclass([NSString class]));
     NSLog(@"NSString类的version是%d",class_getVersion([NSObject class]));
     NSLog(@"NSString类的name是%s",class_getName([NSObject class]));
     NSLog(@"NSString类的instance_size是%ld",class_getInstanceSize([NSObject class]));

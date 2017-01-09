@@ -73,9 +73,12 @@ typedef void (*_dyld_objc_notify_unmapped)(const char* path, const struct mach_h
 // Register handlers to be called when objc images are mapped, unmapped, and initialized.
 // Dyld will call back the "mapped" function with an array of images that contain an objc-image-info section.
 // Those images that are dylibs will have the ref-counts automatically bumped, so objc will no longer need to
+//
 // call dlopen() on them to keep them from being unloaded.  During the call to _dyld_objc_notify_register(),
 // dyld will call the "mapped" function with already loaded objc images.  During any later dlopen() call,
+//
 // dyld will also call the "mapped" function.  Dyld will call the "init" function when dyld would be called
+//
 // initializers in that image.  This is when objc calls any +load methods in that image.
 //
 void _dyld_objc_notify_register(_dyld_objc_notify_mapped    mapped,

@@ -1987,6 +1987,7 @@ void _objc_flush_caches(Class cls)
 /***********************************************************************
 * map_images
 * Process the given images which are being mapped in by dyld.
+* 
 * Calls ABI-agnostic code after taking ABI-specific locks.
 *
 * Locking: write-locks runtimeLock

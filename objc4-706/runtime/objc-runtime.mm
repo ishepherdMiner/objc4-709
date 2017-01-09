@@ -223,10 +223,14 @@ void removeHeader(header_info *hi)
 /***********************************************************************
 * environ_init
 * Read environment variables that affect the runtime.
+* 读取将作用于runtime的环境变量
 * Also print environment variable help, if requested.
+* 如果需要也会输出环境变量帮助
 **********************************************************************/
 void environ_init(void) 
 {
+    // Wiki的解释
+    // setuid and setgid (short for "set user ID upon execution" and "set group ID upon execution", respectively) are Unix access rights flags that allow users to run an executable with the permissions of the executable's owner or group respectively and to change behaviour in directories.
     if (issetugid()) {
         // All environment variables are silently ignored when setuid or setgid
         // This includes OBJC_HELP and OBJC_PRINT_OPTIONS themselves.
@@ -240,6 +244,8 @@ void environ_init(void)
     // Scan environ[] directly instead of calling getenv() a lot.
     // This optimizes the case where none are set.
     for (char **p = *_NSGetEnviron(); *p != nil; p++) {
+        // The C library function int strncmp(const char *str1, const char *str2, size_t n) compares at most the first n bytes of str1 and str2.
+        // C库函数int strncmp（const char * str1，const char * str2，size_t n）最多比较str1和str2的前n个字节。
         if (0 == strncmp(*p, "Malloc", 6)  ||  0 == strncmp(*p, "DYLD", 4)  ||  
             0 == strncmp(*p, "NSZombiesEnabled", 16))
         {
