@@ -903,6 +903,7 @@ public:
         // Set during realization or construction only. No locking needed.
         // Use a store-release fence because there may be concurrent
         // readers of data and data's contents.
+        
         uintptr_t newBits = (bits & ~FAST_DATA_MASK) | (uintptr_t)newData;
         atomic_thread_fence(memory_order_release);
         bits = newBits;
@@ -1067,9 +1068,12 @@ struct objc_class : objc_object {
     cache_t cache;             // formerly cache pointer and vtable
     class_data_bits_t bits;    // class_rw_t * plus custom rr/alloc flags
 
+    
     class_rw_t *data() { 
         return bits.data();
     }
+    
+    // realizeClass 方法中调用,填充类的对象方法列表,协议列表等等
     void setData(class_rw_t *newData) {
         bits.setData(newData);
     }

@@ -111,6 +111,7 @@ static void grow_refs_and_insert(weak_entry_t *entry,
  */
 static void append_referrer(weak_entry_t *entry, objc_object **new_referrer)
 {
+    // 00 01 
     if (! entry->out_of_line()) {
         // Try to insert inline.
         for (size_t i = 0; i < WEAK_INLINE_COUNT; i++) {
@@ -426,10 +427,11 @@ weak_register_no_lock(weak_table_t *weak_table, id referent_id,
 
     // now remember it and where it is being stored
     weak_entry_t *entry;
+    // 对象已存在弱引用
     if ((entry = weak_entry_for_referent(weak_table, referent))) {
         append_referrer(entry, referrer);
     } 
-    else {
+    else {        
         weak_entry_t new_entry(referent, referrer);
         weak_grow_maybe(weak_table);
         weak_entry_insert(weak_table, &new_entry);

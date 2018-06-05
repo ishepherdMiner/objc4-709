@@ -74,6 +74,7 @@ typedef DisguisedPtr<objc_object *> weak_referrer_t;
 // inline_referrers[1] is a DisguisedPtr of a pointer-aligned address.
 // The low two bits of a pointer-aligned DisguisedPtr will always be 0b00
 // (disguised nil or 0x80..00) or 0b11 (any other address).
+// 为什么会是0b11 不懂
 // Therefore out_of_line_ness == 0b10 is used to mark the out-of-line state.
 #define REFERRERS_OUT_OF_LINE 2
 

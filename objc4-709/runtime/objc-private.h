@@ -875,6 +875,7 @@ class StripedMap {
 
     static unsigned int indexForPointer(const void *p) {
         uintptr_t addr = reinterpret_cast<uintptr_t>(p);
+        
         return ((addr >> 4) ^ (addr >> 9)) % StripeCount;
     }
 
@@ -923,6 +924,7 @@ class StripedMap {
     
 #if DEBUG
     StripedMap() {
+        // printf("1");
         // Verify alignment expectations.
         uintptr_t base = (uintptr_t)&array[0].value;
         uintptr_t delta = (uintptr_t)&array[1].value - base;

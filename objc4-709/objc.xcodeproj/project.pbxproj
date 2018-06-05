@@ -302,7 +302,6 @@
 				838485CA0D6D68A200CEA253 /* objc-auto.mm */,
 				39ABD72012F0B61800D1054C /* objc-weak.mm */,
 				E8923DA0116AB2820071B552 /* objc-block-trampolines.mm */,
-				838485CB0D6D68A200CEA253 /* objc-cache.mm */,
 				83F550DF155E030800E95D3B /* objc-cache-old.mm */,
 				838485CC0D6D68A200CEA253 /* objc-class-old.mm */,
 				838485CE0D6D68A200CEA253 /* objc-class.mm */,
@@ -313,6 +312,7 @@
 				838485D50D6D68A200CEA253 /* objc-initialize.mm */,
 				838485D60D6D68A200CEA253 /* objc-layout.mm */,
 				838485D80D6D68A200CEA253 /* objc-load.mm */,
+				838485CB0D6D68A200CEA253 /* objc-cache.mm */,
 				838485DA0D6D68A200CEA253 /* objc-loadmethod.mm */,
 				838485DB0D6D68A200CEA253 /* objc-lockdebug.mm */,
 				83725F4914CA5BFA0014370E /* objc-opt.mm */,
@@ -1128,6 +1128,7 @@
 				964814431EBA20B300895BD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -217,10 +217,14 @@ alignas(StripedMap<SideTable>) static uint8_t
     SideTableBuf[sizeof(StripedMap<SideTable>)];
 
 static void SideTableInit() {
+    printf("SideTableBuf = %p\n",SideTableBuf);
     new (SideTableBuf) StripedMap<SideTable>();
+    printf("SideTableBuf = %p\n",SideTableBuf);
 }
 
 static StripedMap<SideTable>& SideTables() {
+    // reinterpret_cast 忽视类型强转 <StripedMap<SideTable>*>
+    // SideTableBuf 是 StripedMap<SideTable> 数组
     return *reinterpret_cast<StripedMap<SideTable>*>(SideTableBuf);
 }
 
@@ -2158,7 +2162,7 @@ void arr_init(void)
 
 // Replaced by CF (throws an NSException)
 + (void)doesNotRecognizeSelector:(SEL)sel {
-    _objc_fatal("+[%s %s]: unrecognized selector sent to instance %p", 
+    _objc_fatal("+[%s %s]: unrecognized selector sent to instance %p",
                 class_getName(self), sel_getName(sel), self);
 }
 
